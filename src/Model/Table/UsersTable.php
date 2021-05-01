@@ -72,6 +72,44 @@ class UsersTable extends Table
             ->numeric('longitude')
             ->allowEmptyString('longitude');
 
+        $validator
+            ->scalar('twitter')
+            ->maxLength('twitter', 50)
+            ->allowEmptyString('twitter');
+
+        $validator
+            ->scalar('instagram')
+            ->maxLength('instagram', 50)
+            ->allowEmptyString('instagram');
+
+        $validator
+            ->scalar('boutique')
+            ->maxLength('boutique', 50)
+            ->allowEmptyString('boutique');
+
+        $validator
+            ->email('email')
+            ->allowEmptyString('email');
+
+        $validator
+            ->scalar('password')
+            ->maxLength('password', 50)
+            ->allowEmptyString('password');
+
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules): RulesChecker
+    {
+        $rules->add($rules->isUnique(['email']), ['errorField' => 'email']);
+
+        return $rules;
     }
 }

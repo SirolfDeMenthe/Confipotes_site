@@ -1,9 +1,15 @@
 <header>
     <nav>
-    <?= $this->Html->link(
-        'Home',
-        '/pages/home',
-        ['class' => 'button', 'target' => '_blank']
-    );?>
+        <ul>
+            <li><?= $this->Html->link(
+            'Home',
+            '/pages/home'
+            );?></li>
+            
+            <li><?= $this->Html->link(
+            'Confimap',
+            '/users/map'
+            );?></li>
+        </ul>
     </nav>
 </header>

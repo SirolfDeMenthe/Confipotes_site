@@ -27,6 +27,26 @@
                     <td><?= h($user->adresse) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('Twitter') ?></th>
+                    <td><?= h($user->twitter) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Instagram') ?></th>
+                    <td><?= h($user->instagram) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Boutique') ?></th>
+                    <td><?= h($user->boutique) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Email') ?></th>
+                    <td><?= h($user->email) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('Password') ?></th>
+                    <td><?= h($user->password) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($user->id) ?></td>
                 </tr>

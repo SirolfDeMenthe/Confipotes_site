@@ -26,6 +26,11 @@
                     echo $this->Form->control('adresse');
                     echo $this->Form->control('latitude');
                     echo $this->Form->control('longitude');
+                    echo $this->Form->control('twitter');
+                    echo $this->Form->control('instagram');
+                    echo $this->Form->control('boutique');
+                    echo $this->Form->control('email');
+                    echo $this->Form->control('password');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

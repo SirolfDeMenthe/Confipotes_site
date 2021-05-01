@@ -16,6 +16,11 @@
                     <th><?= $this->Paginator->sort('adresse') ?></th>
                     <th><?= $this->Paginator->sort('latitude') ?></th>
                     <th><?= $this->Paginator->sort('longitude') ?></th>
+                    <th><?= $this->Paginator->sort('twitter') ?></th>
+                    <th><?= $this->Paginator->sort('instagram') ?></th>
+                    <th><?= $this->Paginator->sort('boutique') ?></th>
+                    <th><?= $this->Paginator->sort('email') ?></th>
+                    <th><?= $this->Paginator->sort('password') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -27,6 +32,11 @@
                     <td><?= h($user->adresse) ?></td>
                     <td><?= $this->Number->format($user->latitude) ?></td>
                     <td><?= $this->Number->format($user->longitude) ?></td>
+                    <td><?= h($user->twitter) ?></td>
+                    <td><?= h($user->instagram) ?></td>
+                    <td><?= h($user->boutique) ?></td>
+                    <td><?= h($user->email) ?></td>
+                    <td><?= h($user->password) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
