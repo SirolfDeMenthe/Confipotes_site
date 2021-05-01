@@ -4,18 +4,19 @@
  */
 ?>
 <div id="mapid"></div>
-<div>
+<div class="users form content">
     <?= $this->Form->create(null,['url'=>['action'=>'add']]) ?>
-    <fieldset>
-        <legend><?= __('Add User') ?></legend>
-        <?php
-            echo $this->Form->control('nom');
-            echo $this->Form->control('adresse');
-            echo $this->Form->control('latitude');
-            echo $this->Form->control('longitude');
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
+        <fieldset>
+            <legend><?= __('Add User') ?></legend>
+                <?php
+                    echo $this->Form->control('nom');
+                    echo $this->Form->control('adresse');
+                    echo $this->Form->control('twitter');
+                    echo $this->Form->control('instagram');
+                    echo $this->Form->control('boutique');
+                ?>
+            </fieldset>
+        <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
 
