@@ -47,12 +47,16 @@ class UsersController extends AppController
     public function add()
     {
         $user = $this->Users->newEmptyEntity();
+        $infojson = file_get_contents('http://www.mapquestapi.com/geocoding/v1/address?key=D0QtuQCqdflctb7EAFRRqmVT6ZGPBic2&location='. $this->request->getData('adresse'));
+        $info = json_decode($infojson);
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+            $user['latitude'] = $info->results[0]->locations[0]->latLng->lat;
+            $user['longitude'] = $info->results[0]->locations[0]->latLng->lng;
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'map']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
@@ -76,7 +80,7 @@ class UsersController extends AppController
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'map']);
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }

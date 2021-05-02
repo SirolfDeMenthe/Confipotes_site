@@ -5,13 +5,12 @@
  */
 ?>
 <div class="users index content">
-    <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    <?= $this->Flash->render('bravo');?>
     <h3><?= __('Users') ?></h3>
     <div class="table-responsive">
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('nom') ?></th>
                     <th><?= $this->Paginator->sort('adresse') ?></th>
                     <th><?= $this->Paginator->sort('latitude') ?></th>
@@ -19,15 +18,12 @@
                     <th><?= $this->Paginator->sort('twitter') ?></th>
                     <th><?= $this->Paginator->sort('instagram') ?></th>
                     <th><?= $this->Paginator->sort('boutique') ?></th>
-                    <th><?= $this->Paginator->sort('email') ?></th>
-                    <th><?= $this->Paginator->sort('password') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($users as $user): ?>
                 <tr>
-                    <td><?= $this->Number->format($user->id) ?></td>
                     <td><?= h($user->nom) ?></td>
                     <td><?= h($user->adresse) ?></td>
                     <td><?= $this->Number->format($user->latitude) ?></td>
@@ -35,8 +31,6 @@
                     <td><?= h($user->twitter) ?></td>
                     <td><?= h($user->instagram) ?></td>
                     <td><?= h($user->boutique) ?></td>
-                    <td><?= h($user->email) ?></td>
-                    <td><?= h($user->password) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
