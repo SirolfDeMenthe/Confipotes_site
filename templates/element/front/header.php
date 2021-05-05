@@ -2,12 +2,12 @@
     <nav>
         <ul>
             <li><?= $this->Html->link(
-            'Home',
-            '/pages/home'
+            'Confiliste',
+            '/users'
             );?></li>
             
             <li><?= $this->Html->link(
-            'Confimap',
+            'Conficarte',
             '/users/map'
             );?></li>
         </ul>

@@ -13,7 +13,7 @@
    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
-   <?= $this->Html->css(['milligram.min.css',['cake.css'],['normalize.min.css']]);?>
+   <?= $this->Html->css(['milligram.min.css','cake.css','normalize.min.css']);?>
    
    <style>
         #mapid { height: 500px; }
