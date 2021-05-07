@@ -40,21 +40,6 @@ class User extends Entity
         'instagram' => true,
         'boutique' => true,
         'email' => true,
-        'password' => true,
+        'musique' => true,
     ];
-
-    /**
-     * Fields that are excluded from JSON versions of the entity.
-     *
-     * @var array
-     */
-    protected $_hidden = [
-        'password',
-    ];
-
-    protected function _setPassword(string $password)
-    {
-        $hasher = new DefaultPasswordHasher();
-        return $hasher->hash($password);
-    }
 }

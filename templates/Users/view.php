@@ -39,12 +39,8 @@
                     <td><?= h($user->boutique) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Email') ?></th>
-                    <td><?= h($user->email) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Password') ?></th>
-                    <td><?= h($user->password) ?></td>
+                    <th><?= __('Musique') ?></th>
+                    <td><?= h($user->musique) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Id') ?></th>

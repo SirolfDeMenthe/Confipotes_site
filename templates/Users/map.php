@@ -14,6 +14,7 @@
                     echo $this->Form->control('twitter');
                     echo $this->Form->control('instagram');
                     echo $this->Form->control('boutique');
+                    echo $this->Form->control('musique');
                 ?>
             </fieldset>
         <?= $this->Form->button(__('Submit')) ?>

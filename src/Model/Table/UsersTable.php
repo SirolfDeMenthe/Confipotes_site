@@ -88,28 +88,10 @@ class UsersTable extends Table
             ->allowEmptyString('boutique');
 
         $validator
-            ->email('email')
-            ->allowEmptyString('email');
-
-        $validator
-            ->scalar('password')
-            ->maxLength('password', 50)
-            ->allowEmptyString('password');
+            ->scalar('musique')
+            ->maxLength('musique', 50)
+            ->allowEmptyString('musique');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules): RulesChecker
-    {
-        $rules->add($rules->isUnique(['email']), ['errorField' => 'email']);
-
-        return $rules;
     }
 }

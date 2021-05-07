@@ -5,19 +5,17 @@
  */
 ?>
 <div class="users index content">
-    <?= $this->Flash->render('bravo');?>
+    <?= $this->Html->link(__("M'ajouter à la confimap"), ['action' => 'map'], ['class' => 'button float-right']) ?>
     <h3><?= __('Users') ?></h3>
     <div class="table-responsive">
         <table>
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('nom') ?></th>
-                    <th><?= $this->Paginator->sort('adresse') ?></th>
-                    <th><?= $this->Paginator->sort('latitude') ?></th>
-                    <th><?= $this->Paginator->sort('longitude') ?></th>
                     <th><?= $this->Paginator->sort('twitter') ?></th>
                     <th><?= $this->Paginator->sort('instagram') ?></th>
                     <th><?= $this->Paginator->sort('boutique') ?></th>
+                    <th><?= $this->Paginator->sort('musique') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -25,16 +23,12 @@
                 <?php foreach ($users as $user): ?>
                 <tr>
                     <td><?= h($user->nom) ?></td>
-                    <td><?= h($user->adresse) ?></td>
-                    <td><?= $this->Number->format($user->latitude) ?></td>
-                    <td><?= $this->Number->format($user->longitude) ?></td>
                     <td><?= h($user->twitter) ?></td>
                     <td><?= h($user->instagram) ?></td>
                     <td><?= h($user->boutique) ?></td>
+                    <td><?= h($user->musique) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
